@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileCallBar from "@/components/MobileCallBar";
 import { CONTACT_EMAIL, NAP, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -61,7 +62,10 @@ export default function RootLayout({
         />
         <Header />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <div className="pb-14 sm:pb-0">
+          <Footer />
+        </div>
+        <MobileCallBar />
       </body>
     </html>
   );

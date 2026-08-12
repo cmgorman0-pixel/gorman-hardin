@@ -54,6 +54,18 @@ export default function BlogPostLayout({ post }: { post: Post }) {
       <section className="py-14">
         <Container className="max-w-3xl">
           {post.body.map((p, i) => renderParagraph(p, i))}
+
+          <div className="mt-12 rounded-lg border border-navy/10 bg-white p-6 sm:flex sm:items-center sm:justify-between">
+            <p className="font-semibold text-navy">
+              Have questions about your own books or tax planning?
+            </p>
+            <Link
+              href="/contact"
+              className="mt-4 inline-block rounded-full bg-navy px-6 py-3 text-sm font-semibold text-ivory hover:bg-navy-dark sm:mt-0 sm:shrink-0"
+            >
+              Talk to Gorman Hardin
+            </Link>
+          </div>
         </Container>
       </section>
     </>

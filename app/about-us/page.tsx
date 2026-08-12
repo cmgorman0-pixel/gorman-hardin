@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 import { pageMetadata } from "@/lib/metadata";
@@ -36,6 +37,12 @@ export default function AboutPage() {
           <h1 className="mt-3 max-w-2xl text-4xl font-semibold">
             Advisors for Small Business Owners
           </h1>
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
+          >
+            Contact Today
+          </Link>
         </Container>
       </section>
 
