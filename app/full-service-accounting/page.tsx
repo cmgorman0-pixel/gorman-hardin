@@ -1,9 +1,19 @@
-import Link from "next/link";
+import { BookOpen, Building2, Landmark, ShieldCheck, Users, Wallet } from "lucide-react";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 import Faq from "@/components/Faq";
+import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { pageMetadata } from "@/lib/metadata";
+
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Bookkeeping Services": BookOpen,
+  Tax: Landmark,
+  "Consulting Services": Users,
+  Payroll: Wallet,
+  "Business Formation & Entity Setup": Building2,
+  "Compliance & Advisory Support": ShieldCheck,
+};
 
 export const metadata = pageMetadata({
   title: "Full-Service Accounting in Louisville | Gorman Hardin CPA",
@@ -222,41 +232,38 @@ const faqItems = [
 export default function FullServiceAccountingPage() {
   return (
     <>
-      <section className="bg-navy py-16 text-ivory">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-wide text-gold">
-            Small Business Accounting &amp; Tax Planning · Louisville, KY
-          </p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-semibold">
-            Strategy through bookkeeping + Tax
-          </h1>
-          <p className="mt-5 max-w-2xl text-ivory/75">
-            Running a business is hard enough — your accounting should be
-            more than just recordkeeping. At Gorman Hardin, our services are
-            built around one core principle: bookkeeping and tax strategy
-            should work together.
-          </p>
-          <p className="mt-4 max-w-2xl text-ivory/75">
-            When your books are managed through a tax lens, every month
-            becomes an opportunity to plan ahead. That means fewer
-            surprises, smarter decisions, and real savings at year-end.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
-          >
-            Request Services
-          </Link>
-        </Container>
-      </section>
+      <PageHero
+        image="/accountants-records.jpg"
+        imageAlt="Accountants reviewing financial records"
+        kicker="Small Business Accounting & Tax Planning · Louisville, KY"
+        title="Strategy through bookkeeping + Tax"
+        cta={{ href: "/contact", label: "Request Services" }}
+      >
+        <p className="mt-5 max-w-2xl text-ivory/80">
+          Running a business is hard enough — your accounting should be
+          more than just recordkeeping. At Gorman Hardin, our services are
+          built around one core principle: bookkeeping and tax strategy
+          should work together.
+        </p>
+        <p className="mt-4 max-w-2xl text-ivory/80">
+          When your books are managed through a tax lens, every month
+          becomes an opportunity to plan ahead. That means fewer
+          surprises, smarter decisions, and real savings at year-end.
+        </p>
+      </PageHero>
 
       <section className="py-16">
         <Container>
           <h2 className="text-2xl font-semibold text-navy">Full-Service Accounting</h2>
           <div className="mt-8 space-y-12">
-            {categories.map((category) => (
+            {categories.map((category) => {
+              const Icon = categoryIcons[category.name];
+              return (
               <div key={category.name}>
-                <h3 className="text-lg font-semibold text-navy">
+                <h3 className="flex items-center gap-3 text-lg font-semibold text-navy">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                    <Icon className="h-5 w-5" />
+                  </span>
                   {category.name}{" "}
                   <span className="font-normal text-charcoal/50">{category.tagline}</span>
                 </h3>
@@ -269,7 +276,8 @@ export default function FullServiceAccountingPage() {
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </Container>
       </section>

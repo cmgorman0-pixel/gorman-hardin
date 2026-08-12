@@ -14,10 +14,19 @@ const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 
 export default function BlogIndexPage() {
   return (
-    <section className="py-16">
+    <>
+      <section className="bg-navy py-16 text-ivory">
+        <Container>
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold">Gorman Hardin</p>
+          <h1 className="mt-3 text-4xl font-semibold">Blog</h1>
+          <p className="mt-3 max-w-xl text-ivory/75">
+            Accounting, tax planning, and business tips for Louisville small business owners.
+          </p>
+        </Container>
+      </section>
+      <section className="py-16">
       <Container>
-        <h1 className="text-3xl font-semibold text-navy">Blog</h1>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           {sorted.map((post) => (
             <Link
               key={post.slug}
@@ -34,6 +43,7 @@ export default function BlogIndexPage() {
           ))}
         </div>
       </Container>
-    </section>
+      </section>
+    </>
   );
 }

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -47,25 +47,21 @@ const services = [
 export default function TaxPreparationPage() {
   return (
     <>
-      <section className="bg-navy py-16 text-ivory">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-wide text-gold">Tax Preparation</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-semibold">Expert Tax Preparation</h1>
-          <p className="mt-5 max-w-2xl text-ivory/75">
-            Navigating the complexities of tax laws and regulations can be
-            daunting, but proper tax preparation is essential for minimizing
-            your tax liability and ensuring compliance. Our experienced
-            CPAs are dedicated to providing accurate, timely, and
-            personalized tax solutions.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
-          >
-            Contact Today
-          </Link>
-        </Container>
-      </section>
+      <PageHero
+        image="/hero-louisville-b.jpg"
+        imageAlt="Louisville, Kentucky riverfront"
+        kicker="Tax Preparation"
+        title="Expert Tax Preparation"
+        cta={{ href: "/contact", label: "Contact Today" }}
+      >
+        <p className="mt-5 max-w-2xl text-ivory/80">
+          Navigating the complexities of tax laws and regulations can be
+          daunting, but proper tax preparation is essential for minimizing
+          your tax liability and ensuring compliance. Our experienced
+          CPAs are dedicated to providing accurate, timely, and
+          personalized tax solutions.
+        </p>
+      </PageHero>
 
       <section className="py-16">
         <Container className="max-w-3xl">

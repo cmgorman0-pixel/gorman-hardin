@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 import ReviewCard, { Stars } from "@/components/ReviewCard";
 import { reviews } from "@/content/reviews";
 import { pageMetadata } from "@/lib/metadata";
@@ -38,35 +39,23 @@ const homeServices = [
 export default function HomePage() {
   return (
     <>
-      <section
-        className="relative overflow-hidden bg-navy-dark bg-cover bg-center py-28 text-ivory sm:py-36"
-        style={{ backgroundImage: "url(/hero-louisville.jpg)" }}
+      <PageHero
+        image="/hero-louisville.jpg"
+        imageAlt="Louisville, Kentucky skyline at dusk"
+        kicker="Welcome to Gorman Hardin"
+        title="Accounting, Tax Strategy & Advisory for Growing Businesses"
+        cta={{ href: "/contact", label: "Contact Now" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy-dark/40" />
-        <Container className="relative">
-          <p className="text-sm font-semibold uppercase tracking-wide text-gold">
-            Welcome to Gorman Hardin
-          </p>
-          <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-tight sm:text-6xl">
-            Accounting, Tax Strategy &amp; Advisory for Growing Businesses
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-ivory/80">
-            Based in Louisville, we help owner-led businesses across Kentucky
-            and beyond maintain accurate financials, plan ahead for taxes,
-            and make better decisions with confidence.
-          </p>
-          <div className="mt-7 flex items-center gap-3">
-            <span className="text-xl font-bold text-gold">5.0</span>
-            <Stars />
-          </div>
-          <Link
-            href="/contact"
-            className="mt-9 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
-          >
-            Contact Now
-          </Link>
-        </Container>
-      </section>
+        <p className="mt-6 max-w-xl text-lg text-ivory/80">
+          Based in Louisville, we help owner-led businesses across Kentucky
+          and beyond maintain accurate financials, plan ahead for taxes,
+          and make better decisions with confidence.
+        </p>
+        <div className="mt-7 flex items-center gap-3">
+          <span className="text-xl font-bold text-gold">5.0</span>
+          <Stars />
+        </div>
+      </PageHero>
 
       <section className="py-16">
         <Container className="max-w-3xl">

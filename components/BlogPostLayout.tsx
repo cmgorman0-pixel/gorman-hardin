@@ -46,7 +46,8 @@ export default function BlogPostLayout({ post }: { post: Post }) {
           </Link>
           <h1 className="mt-3 max-w-3xl text-3xl font-semibold sm:text-4xl">{post.title}</h1>
           <p className="mt-3 text-sm text-ivory/60">
-            {post.displayDate} · {post.category}
+            {post.displayDate}
+            {post.category !== "Uncategorized" && ` · ${post.category}`}
           </p>
         </Container>
       </section>

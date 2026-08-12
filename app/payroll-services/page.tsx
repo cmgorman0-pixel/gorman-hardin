@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -47,32 +47,26 @@ const services = [
 export default function PayrollServicesPage() {
   return (
     <>
-      <section className="bg-navy py-16 text-ivory">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-wide text-gold">Payroll Services</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-semibold">
-            Streamlined Payroll Solutions for Your Business
-          </h1>
-          <p className="mt-5 max-w-2xl text-ivory/75">
-            Managing payroll can be a complex and time-consuming task, but
-            it&apos;s essential for keeping employees satisfied and ensuring
-            compliance with labor laws. We offer comprehensive payroll
-            services designed to simplify payroll processing, reduce
-            errors, and ensure timely, accurate payments.
-          </p>
-          <p className="mt-4 max-w-2xl text-ivory/75">
-            Our payroll solutions go beyond basic processing — we understand
-            the unique challenges of managing a workforce that includes both
-            traditional employees and 1099 contractors.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
-          >
-            Request Quote
-          </Link>
-        </Container>
-      </section>
+      <PageHero
+        image="/ladies-talking.jpg"
+        imageAlt="Gorman Hardin team discussing payroll for a client"
+        kicker="Payroll Services"
+        title="Streamlined Payroll Solutions for Your Business"
+        cta={{ href: "/contact", label: "Request Quote" }}
+      >
+        <p className="mt-5 max-w-2xl text-ivory/80">
+          Managing payroll can be a complex and time-consuming task, but
+          it&apos;s essential for keeping employees satisfied and ensuring
+          compliance with labor laws. We offer comprehensive payroll
+          services designed to simplify payroll processing, reduce
+          errors, and ensure timely, accurate payments.
+        </p>
+        <p className="mt-4 max-w-2xl text-ivory/80">
+          Our payroll solutions go beyond basic processing — we understand
+          the unique challenges of managing a workforce that includes both
+          traditional employees and 1099 contractors.
+        </p>
+      </PageHero>
 
       <section className="py-16">
         <Container className="max-w-3xl">
