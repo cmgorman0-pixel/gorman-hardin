@@ -2,7 +2,6 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 import ReviewCard, { Stars } from "@/components/ReviewCard";
-import SectionPhoto from "@/components/SectionPhoto";
 import { reviews } from "@/content/reviews";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -39,36 +38,33 @@ const homeServices = [
 export default function HomePage() {
   return (
     <>
-      <section className="bg-navy py-20 text-ivory">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-gold">
-              Welcome to Gorman Hardin
-            </p>
-            <h1 className="mt-3 max-w-2xl text-4xl font-semibold sm:text-5xl">
-              Accounting, Tax Strategy &amp; Advisory for Growing Businesses
-            </h1>
-            <p className="mt-5 max-w-xl text-ivory/75">
-              Based in Louisville, we help owner-led businesses across Kentucky
-              and beyond maintain accurate financials, plan ahead for taxes,
-              and make better decisions with confidence.
-            </p>
-            <div className="mt-6 flex items-center gap-3">
-              <Stars />
-              <span className="text-sm text-ivory/70">5.0 average rating</span>
-            </div>
-            <Link
-              href="/contact"
-              className="mt-8 inline-block rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy-dark hover:bg-gold-light"
-            >
-              Contact Now
-            </Link>
+      <section
+        className="relative overflow-hidden bg-navy-dark bg-cover bg-center py-28 text-ivory sm:py-36"
+        style={{ backgroundImage: "url(/hero-louisville.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy-dark/40" />
+        <Container className="relative">
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold">
+            Welcome to Gorman Hardin
+          </p>
+          <h1 className="mt-4 max-w-2xl text-5xl font-bold leading-tight sm:text-6xl">
+            Accounting, Tax Strategy &amp; Advisory for Growing Businesses
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-ivory/80">
+            Based in Louisville, we help owner-led businesses across Kentucky
+            and beyond maintain accurate financials, plan ahead for taxes,
+            and make better decisions with confidence.
+          </p>
+          <div className="mt-7 flex items-center gap-3">
+            <span className="text-xl font-bold text-gold">5.0</span>
+            <Stars />
           </div>
-          <SectionPhoto
-            query="louisville kentucky skyline"
-            alt="Louisville, Kentucky skyline"
-            className="hidden aspect-[4/3] lg:block"
-          />
+          <Link
+            href="/contact"
+            className="mt-9 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
+          >
+            Contact Now
+          </Link>
         </Container>
       </section>
 
@@ -123,7 +119,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/full-service-accounting"
-            className="mt-6 inline-block rounded-md bg-navy px-6 py-3 text-sm font-semibold text-ivory hover:bg-navy-dark"
+            className="mt-6 inline-block rounded-full bg-navy px-8 py-4 text-sm font-semibold text-ivory shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-navy-dark"
           >
             Request Services
           </Link>

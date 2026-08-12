@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
-import SectionPhoto from "@/components/SectionPhoto";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
@@ -41,11 +41,14 @@ export default function AboutPage() {
 
       <section className="py-16">
         <Container className="grid gap-10 lg:grid-cols-[1fr,1.4fr] lg:items-start">
-          <SectionPhoto
-            query="accountants meeting office"
-            alt="Accountants reviewing financial records together"
-            className="aspect-[4/3] lg:aspect-auto lg:h-full"
-          />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg lg:aspect-auto lg:h-full">
+            <Image
+              src="/accountants-talking.jpg"
+              alt="Gorman Hardin accountants reviewing financial records together"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div>
           <h2 className="text-2xl font-semibold text-navy">From Experience to Strategy</h2>
           <p className="mt-4 text-charcoal/85 leading-relaxed">

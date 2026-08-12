@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 import MobileNav from "./MobileNav";
@@ -12,11 +13,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-navy/10 bg-ivory/95 backdrop-blur">
       <Container className="relative flex h-16 items-center justify-between">
-        <Link
-          href="/"
-          className="font-serif text-lg font-semibold tracking-tight text-navy"
-        >
-          Gorman <span className="text-gold">Hardin</span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="Gorman Hardin" width={160} height={46} className="h-10 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">

@@ -18,7 +18,7 @@ export default function ReviewsPage() {
           <h1 className="text-3xl font-semibold">Reviews</h1>
           <a
             href={`tel:${NAP.telephone}`}
-            className="mt-6 inline-block rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy-dark hover:bg-gold-light"
+            className="mt-6 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
           >
             Call Now
           </a>

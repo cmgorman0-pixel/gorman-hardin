@@ -67,7 +67,7 @@ export default function PayrollServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-md bg-gold px-6 py-3 text-sm font-semibold text-navy-dark hover:bg-gold-light"
+            className="mt-8 inline-block rounded-full bg-gold px-8 py-4 text-sm font-semibold text-navy-dark shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-light"
           >
             Request Quote
           </Link>
