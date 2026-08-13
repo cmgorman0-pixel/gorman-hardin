@@ -52,8 +52,11 @@ export default function Footer() {
           </div>
         </div>
       </Container>
-      <Container className="border-t border-ivory/10 py-4 text-xs">
-        © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+      <Container className="flex flex-col gap-2 border-t border-ivory/10 py-4 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <span>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</span>
+        <Link href="/privacy" className="hover:text-ivory">
+          Privacy Policy
+        </Link>
       </Container>
     </footer>
   );

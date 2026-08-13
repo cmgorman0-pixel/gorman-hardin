@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
+import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -54,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col font-sans">
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -66,6 +69,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <MobileCallBar />
+        <CookieConsent />
       </body>
     </html>
   );
