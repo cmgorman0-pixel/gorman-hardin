@@ -43,10 +43,8 @@ export default function RootLayout({
     telephone: NAP.telephone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: NAP.streetAddress,
       addressLocality: NAP.addressLocality,
       addressRegion: NAP.addressRegion,
-      postalCode: NAP.postalCode,
       addressCountry: "US",
     },
     areaServed: ["Louisville, KY", "Kentucky"],
