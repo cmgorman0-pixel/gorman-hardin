@@ -29,10 +29,10 @@ const nextConfig = {
       ...Object.entries(PAGE_MAP).map(([source, dest]) => ({
         source,
         destination: `${FA}${dest}`,
-        permanent: true,
+        statusCode: 301,
       })),
       // Anything else (old query-string URLs, images, pages not listed).
-      { source: "/:path*", destination: `${FA}/`, permanent: true },
+      { source: "/:path*", destination: `${FA}/`, statusCode: 301 },
     ];
   },
   images: {
